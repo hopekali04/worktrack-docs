@@ -199,7 +199,7 @@ extra:
   # Social links
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-org/worktrack-docs
+      link: https://github.com/hopekali04/worktrack-docs
       name: 'GitHub Repository'
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/worktrack

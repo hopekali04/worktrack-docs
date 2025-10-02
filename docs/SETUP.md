@@ -1,4 +1,4 @@
-# ⚙️ Setup Guide
+# Setup Guide
 
 ## Overview
 
@@ -88,7 +88,7 @@ This will install all required dependencies listed in `package.json`, including:
 
 1. Go to **Project Settings** (gear icon)
 2. Scroll down to **"Your apps"**
-3. Click the **web icon** (`</>`) to add a web app
+3. Click the **web icon** (`&lt;/&gt;`) to add a web app
 4. Enter app nickname (e.g., "WorkTrack Web")
 5. Don't check "Firebase Hosting" (we'll use Vercel)
 6. Click **"Register app"**
@@ -668,4 +668,4 @@ After completing setup:
 
 ---
 
-Happy coding! 🚀
+Happy coding! 
