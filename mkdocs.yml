@@ -1,0 +1,250 @@
+# =============================================================================
+# WorkTrack Documentation Site Configuration
+# =============================================================================
+# Modern MkDocs configuration following HCI principles for excellent UX
+# Last updated: October 2025
+
+# Site Information
+# -----------------------------------------------------------------------------
+site_name: 'WorkTrack Documentation'
+site_description: 'Comprehensive documentation for WorkTrack - your productivity companion'
+site_author: 'Hope Kalitera'
+site_url: 'https://worktrack-docs.example.com'
+copyright: 'Copyright &copy; 2025 Hope Kalitera'
+
+# Repository Information
+# -----------------------------------------------------------------------------
+repo_name: 'worktrack-docs'
+repo_url: 'https://github.com/hopekali04/worktrack-docs'
+edit_uri: 'edit/main/docs/'
+
+# Build Configuration
+# -----------------------------------------------------------------------------
+docs_dir: 'docs'
+site_dir: 'site'
+use_directory_urls: true
+
+# Theme Configuration
+# -----------------------------------------------------------------------------
+theme:
+  name: 'material'
+  language: 'en'
+  
+  # Color Palette (Modern, accessible colors)
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: 'indigo'
+      accent: 'deep purple'
+      toggle:
+        icon: material/brightness-7
+        name: 'Switch to dark mode'
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 'indigo'
+      accent: 'deep purple'
+      toggle:
+        icon: material/brightness-4
+        name: 'Switch to light mode'
+  
+  # Typography & Layout
+  font:
+    text: 'Inter'
+    code: 'JetBrains Mono'
+  
+  # Features for enhanced UX
+  features:
+    - navigation.instant        # Fast page loading
+    - navigation.instant.prefetch
+    - navigation.tracking       # URL updates with scroll
+    - navigation.tabs          # Top-level tabs
+    - navigation.tabs.sticky   # Sticky navigation tabs
+    - navigation.sections      # Collapsible sections
+    - navigation.path          # Breadcrumb navigation
+    - navigation.indexes       # Section index pages
+    - navigation.top           # Back-to-top button
+    - navigation.footer        # Previous/next navigation
+    - toc.follow              # Smooth TOC following
+    - toc.integrate           # Integrated table of contents
+    - search.highlight        # Search result highlighting
+    - search.share           # Search result sharing
+    - search.suggest         # Search suggestions
+    - header.autohide        # Auto-hide header on scroll
+    - content.action.edit    # Edit page action
+    - content.action.view    # View source action
+    - content.code.copy      # Copy code button
+    - content.code.select    # Select code button
+    - content.tooltips       # Enhanced tooltips
+    - content.tabs.link      # Linkable content tabs
+
+  # Icons
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    
+  # Logo and favicon
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
+
+# Navigation Structure
+# -----------------------------------------------------------------------------
+# Organized for intuitive information architecture
+nav:
+  - Home: 'Index.md'
+  - Getting Started:
+    - Setup Guide: 'SETUP.md'
+  - Technical Documentation:
+    - Architecture: 'Architecture.md'
+    - API Reference: 'API.md'
+  - Resources:
+    - Ideas & Roadmap: 'ideas.md'
+
+# Plugins for Enhanced Functionality
+# -----------------------------------------------------------------------------
+plugins:
+  # Essential plugins
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: 
+        - en
+  
+  # Auto-generate navigation
+  - awesome-pages
+  
+  # Enhanced features
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+  
+  # Git integration
+  - git-revision-date-localized:
+      type: datetime
+      timezone: UTC
+      locale: en
+      fallback_to_build_date: true
+  
+  - git-committers:
+      repository: your-org/worktrack-docs
+      branch: main
+
+# Markdown Extensions
+# -----------------------------------------------------------------------------
+# Enhanced markdown processing for better content presentation
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: 'Permanent link'
+  - tables
+  - meta
+
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: your-org
+      repo: worktrack-docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Additional Configuration
+# -----------------------------------------------------------------------------
+# Extra CSS and JavaScript for custom styling
+extra_css:
+  - assets/css/custom.css
+  - assets/css/print.css
+
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Social and Analytics
+extra:
+  # Social links
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/worktrack-docs
+      name: 'GitHub Repository'
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/worktrack
+      name: 'Follow us on Twitter'
+    - icon: fontawesome/solid/envelope
+      link: mailto:docs@worktrack.com
+      name: 'Contact us'
+  
+  # Version information
+  version:
+    provider: mike
+    default: stable
+  
+  # Analytics (uncomment and configure as needed)
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXXXX
+  
+  # Consent management
+  consent:
+    title: 'Cookie Consent'
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+# Validation and Optimization
+# -----------------------------------------------------------------------------
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+# Development Configuration
+# -----------------------------------------------------------------------------
+watch:
+  - docs/
+  - mkdocs.yml
+  - README.md
+
+# Strict mode for production builds
+strict: true
