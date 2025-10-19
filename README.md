@@ -1,6 +1,6 @@
-# 💪 Workout Tracker
+# Workout Tracker
 
-A comprehensive, production-ready workout tracking application built with Next.js, TypeScript, and Firebase.
+A comprehensive, workout tracking application built with Next.js, TypeScript, and Firebase.
 
 ## 🚀 Features
 
@@ -223,7 +223,7 @@ export enum WorkoutCategory {
 
 Edit `src/lib/constants/defaultWorkouts.ts` to add, remove, or modify the preloaded workout templates.
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Firebase Authentication Errors
 
@@ -256,4 +256,4 @@ For issues or questions, please open an issue on GitHub.
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and Firebase
+Built using Next.js, TypeScript, and Firebase
